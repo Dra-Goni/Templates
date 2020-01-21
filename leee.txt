@@ -1,0 +1,5 @@
+//crear sistema de envio de solicitudes estilo mesa de trabajo
+//crear sistema de rol
+administrador crea tipos de solicitud y puede agregar mas gente y asignar encargado de la mesa
+crear mesas y sus tipos 
+crear traking de la solicitud que pueda ver quien iso la solicitud

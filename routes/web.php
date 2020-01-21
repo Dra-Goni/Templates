@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'login'],function(){
+    Route::get('', 'loginController@index');
+    Route::post('/log', 'loginController@login');
+});
+
+Route::group(['prefix'=>'usuario'],function(){
+    Route::get('/crear', 'UsuariosController@crear');
+    Route::post('/crear', 'UsuariosController@create');
+});
