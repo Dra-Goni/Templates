@@ -5,7 +5,26 @@
 <div class="mt-5">
     &nbsp;
 </div> 
+
 <div class="container mt-5">
+    <div >
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @if (session('msg'))
+            <div class="alert alert-success">
+                {{ session('msg') }}
+            </div>
+        @endif
+
+    </div>
+
 <form  method="POST" action="{{ url('/usuario/crear') }}"  >
     @csrf
     <div class="form-row text-center">
@@ -34,13 +53,13 @@
     <div class="form-row">
         <div class="form-group col-12">
             <label>Contraseña</label>
-           <input type="password"  class="form-control" name="contraseña">
+           <input type="password"  class="form-control" name="password">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-12">
             <label>Repetir Contraseña</label>
-           <input type="password"  class="form-control" name="contraseña_rep">
+           <input type="password"  class="form-control" name="password_confirmation">
         </div>
     </div>
 

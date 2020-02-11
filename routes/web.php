@@ -13,14 +13,14 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');
 
 Route::group(['prefix'=>'login'],function(){
-    Route::get('', 'loginController@index');
+    Route::get('', 'loginController@index')->name('login');
     Route::post('/log', 'loginController@login');
 });
 
-Route::group(['prefix'=>'usuario'],function(){
+Route::group(['prefix'=>'usuario', 'middleware' => 'auth'],function(){
     Route::get('/crear', 'UsuariosController@crear');
-    Route::post('/crear', 'UsuariosController@create');
+    Route::post('/crear', 'UsuariosController@store');
 });

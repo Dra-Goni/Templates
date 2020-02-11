@@ -15,17 +15,15 @@ class LoginController extends Controller
     public function Login(Request $request)
     {
         $userdata = array(
-            'USU_MAIL'     => $request->correo,
+            'USU_MAIL'     => $request->email,
             'password'  =>   $request->password
         );
        
-        
+       
         if (Auth::attempt($userdata)) {
-           
-            return redirect('/menu');
+            return redirect('/');
         }else{
-           
-            return redirect('/')->with('popup', 'open');
+            return redirect('');
          
         }
     }

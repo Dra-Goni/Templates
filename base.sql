@@ -65,3 +65,5 @@ CREATE TABLE SOLUCION (
 insert into Rol values ('1','Administrador');
 insert into Rol values ('2','Trabajador');
 insert into Rol values ('3','Usuario');
+
+insert into Usuario values ('','asdf@gmail.com','$2y$10$zlpaz0O4OoETL334F0tc0OoHRHxXwvHKZH9rAWlMaQmGDVhen8m/e','1')
