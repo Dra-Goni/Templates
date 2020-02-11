@@ -18,9 +18,20 @@ Route::get('/', function () {
 Route::group(['prefix'=>'login'],function(){
     Route::get('', 'loginController@index')->name('login');
     Route::post('/log', 'loginController@login');
+    Route::get('/logout','LoginController@logout');
 });
 
 Route::group(['prefix'=>'usuario', 'middleware' => 'auth'],function(){
     Route::get('/crear', 'UsuariosController@crear');
     Route::post('/crear', 'UsuariosController@store');
+});
+
+Route::group(['prefix'=>'tipo', 'middleware' => 'auth'],function(){
+    Route::get('/', 'TipoController@index');
+    Route::get('/crear', 'TipoController@crear');
+    Route::post('/crear', 'TipoController@store');
+    Route::get('/ver', 'TipoController@ver');
+    Route::delete('/borrar/{id}', 'TipoController@delete');
+    Route::get('/editar/{id}', 'TipoController@editar');
+    Route::put('/editar/{id}', 'TipoController@edit');
 });

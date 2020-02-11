@@ -19,7 +19,7 @@
         <ul class="navbar-nav ml-auto">
           <!-- Messages Dropdown Menu -->
           <li class="nav-item dropdown">
-           
+            <a href="{{url("/login/logout")}}" class="nav-link">Cerrar Sesión</a>
     
           </li>
           <!-- Notifications Dropdown Menu -->
