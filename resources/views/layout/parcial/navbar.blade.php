@@ -19,8 +19,10 @@
         <ul class="navbar-nav ml-auto">
           <!-- Messages Dropdown Menu -->
           <li class="nav-item dropdown">
+            <a href="#" class="nav-link"> {{  (Auth::user()->USU_MAIL) }}</a>
+          </li>
+          <li class="nav-item dropdown">
             <a href="{{url("/login/logout")}}" class="nav-link">Cerrar Sesión</a>
-    
           </li>
           <!-- Notifications Dropdown Menu -->
           

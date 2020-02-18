@@ -35,3 +35,14 @@ Route::group(['prefix'=>'tipo', 'middleware' => 'auth'],function(){
     Route::get('/editar/{id}', 'TipoController@editar');
     Route::put('/editar/{id}', 'TipoController@edit');
 });
+
+
+Route::group(['prefix'=>'solicitud', 'middleware' => 'auth'],function(){
+    Route::get('/', 'SolicitudController@index');
+    Route::get('/crear', 'SolicitudController@crear');
+    Route::post('/crear', 'SolicitudController@store');
+    Route::get('/ver', 'SolicitudController@ver');
+    Route::delete('/borrar/{id}', 'SolicitudController@delete');
+    Route::get('/editar/{id}', 'SolicitudController@editar');
+    Route::put('/editar/{id}', 'SolicitudController@edit');
+});
